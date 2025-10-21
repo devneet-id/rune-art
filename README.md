@@ -11,7 +11,7 @@ Wanna share your art? Here’s how to contribute:
 
 1. **Fork** this repository to your own GitHub account.  
 2. Upload your design (e.g., logo, icon, or illustration) to your forked repo.
-3. Create folder in `user/<your>/v1`
+3. Create folder in `user/<your>/v1-<image>`
 4. **Submit a Pull Request (PR)** to this main repository.  
 5. Wait for review and approval — your artwork will be featured here! 🎨✨  
 
