@@ -10,8 +10,9 @@ This repository is part of: [devneet-id/rune](https://github.com/devneet-id/rune
 Wanna share your art? Here’s how to contribute:
 
 1. **Fork** this repository to your own GitHub account.  
-2. Upload your design (e.g., logo, icon, or illustration) to your forked repo.  
-3. **Submit a Pull Request (PR)** to this main repository.  
-4. Wait for review and approval — your artwork will be featured here! 🎨✨  
+2. Upload your design (e.g., logo, icon, or illustration) to your forked repo.
+3. Create folder in `user/<your>/v1`
+4. **Submit a Pull Request (PR)** to this main repository.  
+5. Wait for review and approval — your artwork will be featured here! 🎨✨  
 
 Thank you for helping make *rune* more beautiful! 💫
