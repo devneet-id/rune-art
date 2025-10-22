@@ -1,0 +1,63 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "b631961aa7de9f6f00a6530e5e9e39ce",
+    "packages": [
+        {
+            "name": "devneet/rune",
+            "version": "v1.11.84",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devneet-id/rune.git",
+                "reference": "43c7989e496047732223f12670ced3bcb52daebb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devneet-id/rune/zipball/43c7989e496047732223f12670ced3bcb52daebb",
+                "reference": "43c7989e496047732223f12670ced3bcb52daebb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rune\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "AnwarAchilles",
+                    "email": "hudorianwar07@gmail.com"
+                },
+                {
+                    "name": "DEVNEET Team",
+                    "email": "opensource@devneet.org"
+                }
+            ],
+            "description": "Rune is a lore-driven, modular concept beneath PHP, designed not to dictate development — but to respond to it.",
+            "support": {
+                "issues": "https://github.com/devneet/rune/issues",
+                "source": "https://github.com/devneet/rune"
+            },
+            "time": "2025-10-02T22:35:03+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
+}
