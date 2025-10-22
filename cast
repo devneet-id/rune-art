@@ -1,0 +1,128 @@
+<?php
+/*
+ * Act. 3 - Meet With The Cast
+ * THE AWAKENING ✦ 
+ *
+ * From the silence of nothingness, echoes rise from the void.
+ * A journey begins — with runes at your side.
+ * 
+ * Run this script using:
+ *   $ php {file}
+ *   $ php {file} grimoire
+ */
+require_once __DIR__ . '/vendor/autoload.php';
+
+
+
+/**
+ * I N V O C A T I O N
+ * 
+ * Step 1 — Summon the runes:  
+ * Import each module's manifest.
+ * 
+ * Step 2 — Channel the energy:  
+ * Initialize ether, essence, and entity.
+ * 
+ * Note: Keep #sentinel markers if you're using Sentinel support.
+ */
+use Rune\Aether\Manifest as Aether;
+use Rune\Chanter\Manifest as Chanter;
+use Rune\Weaver\Manifest as Weaver;
+use Rune\Whisper\Manifest as Whisper;
+use Rune\Forger\Manifest as Forger;
+#sentinel-manifest
+
+Aether::ether()::essence()::entity();
+Chanter::ether()::essence()::entity();
+Weaver::ether()::essence()::entity();
+Whisper::ether()::essence()::entity();
+Forger::ether()::essence()::entity();
+#sentinel-awaken
+
+
+
+/**
+ * I N C A N T A T I O N
+ * 
+ * This is your working space.  
+ * Use begin() and end() to define the active logic scope.
+ */
+Aether::begin();
+Chanter::begin();
+
+
+Chanter::cast(
+    arg: 'publish', 
+    echo: 'Publishing users image to official  (user: --u) (version: --v)',
+    execute: function() {
+        $users = Chanter::spell('u');
+        $version = Chanter::spell('v');
+
+        if (!file_exists(__DIR__ . "/users/$users/")) {
+            Whisper::echo("{{text-danger}}User Not Found");
+            exit;
+        }
+
+        Forger::clean(__DIR__ . "/official/", true);
+
+        $search = glob(__DIR__ . "/users/{$users}/v{$version}-*");
+        $parse = [];
+        foreach ($search as $s) {
+            $rename = basename($s);
+            $rename = str_replace("v{$version}-", "", $rename);
+
+            $parse[] = [
+                'type'=> 'item',
+                'from'=> $s,
+                'target'=> __DIR__ . "/official/{$rename}",
+            ];
+        }
+
+        Forger::move($parse);
+
+        Whisper::echo("{{text-success}} Published {$users} v{$version} successfully \n");
+});
+
+Chanter::cast(
+    arg: 'check',
+    echo: 'Check for eligible users image (user: --u) (version: --v)',
+    execute: function() {
+        $users = Chanter::spell('u');
+        $version = Chanter::spell('v');
+
+        if (!file_exists(__DIR__ . "/users/$users/")) {
+            Whisper::echo("{{text-danger}}User Not Found");
+            exit;
+        }
+
+        $item = ['logo'=>false, 'title'=>false, 'card'=>false, 'banner'=>false];
+
+        $search = glob(__DIR__ . "/users/{$users}/v{$version}-*");
+        
+        foreach ($item as $i => $v) {
+            foreach ($search as $s) {
+                if (strpos($s, $i) !== false) {
+                    $item[$i] = true;
+                    break;
+                }
+            }
+        }
+
+        $point = 0;
+        foreach ($item as $i => $v) {
+            if ($v) {
+                $point++;
+                Whisper::echo("- $i {{text-success}}{{icon-success}} \n");
+            }else {
+                $point--;
+                Whisper::echo("- $i {{text-failed}}{{icon-failed}} \n");
+            }
+        }
+
+        Whisper::echo("{{text-info}}>> You have $point points \n");
+});
+
+
+#sentinel-codex
+Chanter::end();
+Aether::end();
